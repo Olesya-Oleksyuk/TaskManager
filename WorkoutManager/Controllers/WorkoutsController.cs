@@ -8,8 +8,18 @@ using Microsoft.EntityFrameworkCore;
 using WorkoutManager.Data;
 using WorkoutManager.Models;
 
+
 namespace WorkoutManager.Controllers
 {
+
+
+    /*   
+        // tell the server that the output should have a header which says that the content type is application/json
+        [Produces("application/json")]
+        // tell the server that this controller should be used when the route starts with "api/Workouts"
+        [Route("api/Workouts")]
+    */
+
     [Route("api/[controller]")]
     [ApiController]
     public class WorkoutsController : ControllerBase

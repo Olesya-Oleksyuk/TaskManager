@@ -30,14 +30,14 @@ namespace WorkoutManager
         {
 
             services.AddControllers();
+            // add Swagger 
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "WorkoutManager", Version = "v1" });
             });
 
-            services.AddDbContext<WorkoutContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("WorkoutContext")));
-
+            // Register the WorkoutsContext as a service that can be injected, 
+            // and define that it will use SQL Server and get the configuration from appsettings.json.
             services.AddDbContext<WorkoutsContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("WorkoutsContext")));
         }
@@ -49,6 +49,7 @@ namespace WorkoutManager
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
+                // Swagger UI offers a web-based UI that provides information about the service, using the generated OpenAPI specification. 
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "WorkoutManager v1"));
             }
 
