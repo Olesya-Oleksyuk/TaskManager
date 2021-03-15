@@ -7,6 +7,7 @@ using WorkoutManager.Models;
 
 namespace WorkoutManager.Data
 {
+    //  Database context provides a way for the C# code to access a database.
     public class WorkoutsContext : DbContext
     {
         public WorkoutsContext (DbContextOptions<WorkoutsContext> options)
@@ -14,6 +15,7 @@ namespace WorkoutManager.Data
         {
         }
 
+        //  Add a database set of type "Workout" to the context. 
         public DbSet<WorkoutManager.Models.Workout> Workout { get; set; }
     }
 }
