@@ -14,6 +14,7 @@ namespace WorkoutManager.Models
         public DateTimeOffset Date { get; set; }
 
         public int DistanceInMeters { get; set; }
+
         [Required]
         public long TimeInSeconds { get; set; }
     }
