@@ -40,6 +40,16 @@ namespace WorkoutManager
             // and define that it will use SQL Server and get the configuration from appsettings.json.
             services.AddDbContext<WorkoutsContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("WorkoutsContext")));
+
+            // To enable CORS on our API
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy",
+                    builder => builder.AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader());
+                   // .AllowCredentials());
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -54,6 +64,8 @@ namespace WorkoutManager
             }
 
             app.UseHttpsRedirection();
+
+            app.UseCors("CorsPolicy");
 
             app.UseRouting();
 
