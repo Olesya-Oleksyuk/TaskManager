@@ -18,6 +18,7 @@ export class WorkoutService {
   public get() {
     // Get all jogging data
     return this.http.get(this.accessPointUrl, { headers: this.headers });
+    // HttpClient methods return observables. 
   }
 
   public add(payload: any) {

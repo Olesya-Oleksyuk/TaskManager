@@ -75,6 +75,7 @@ namespace WorkoutManager
             {
                 endpoints.MapControllers();
             });
+
         }
     }
 }

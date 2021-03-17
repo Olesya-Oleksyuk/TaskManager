@@ -8,6 +8,8 @@ import { GridJoggingComponent } from './grid-jogging/grid-jogging.component';
 import { AddOrUpdateJoggingComponent } from './add-or-update-jogging/add-or-update-jogging.component';
 import { WorkoutService } from './workout.service';
 import { HttpClientModule } from '@angular/common/http';
+import { DecimalPipe } from '@angular/common';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
